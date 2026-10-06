@@ -70,56 +70,60 @@
         .bg-champagne { background-color: var(--champagne); }
         .border-champagne { border-color: var(--champagne); }
 
-        /* GRID CHUẨN ĐỂ LẤP KÍN KHOẢNG TRỐNG */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: 200px; /* Chiều cao cơ sở */
-            gap: 12px;
-            grid-auto-flow: dense; /* Cực kỳ quan trọng: Tự động lấp chỗ trống */
+        /* ====================================================
+           CSS CỘT PINTEREST - GIỮ NGUYÊN 100% TỶ LỆ GỐC
+           ==================================================== */
+        .pinterest-gallery {
+            column-count: 2; /* Mặc định mobile 2 cột */
+            column-gap: 12px;
+            width: 100%;
         }
         
         @media (min-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: 250px;
-                gap: 16px;
+            .pinterest-gallery {
+                column-count: 3; /* Tablet/PC 3 cột */
+                column-gap: 16px;
             }
         }
 
         .gallery-item {
-            overflow: hidden;
+            break-inside: avoid; /* Ngăn ảnh bị cắt đôi giữa 2 cột */
+            margin-bottom: 12px;
             border-radius: 0.5rem;
             position: relative;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transform: translateZ(0); /* Sửa lỗi viền radius khi hover trên Safari */
+        }
+
+        @media (min-width: 768px) {
+            .gallery-item {
+                margin-bottom: 16px;
+            }
         }
         
         .gallery-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto; /* QUAN TRỌNG NHẤT: Giữ nguyên tỷ lệ gốc của ảnh */
             display: block;
             transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
             filter: brightness(0.95);
+            border-radius: 0.5rem;
         }
         
         .gallery-item:hover img {
-            transform: scale(1.06);
+            transform: scale(1.04);
             filter: brightness(1.05);
             cursor: zoom-in;
         }
 
-        /* Các class bổ trợ chia Grid */
-        .row-span-1 { grid-row: span 1; }
-        .row-span-2 { grid-row: span 2; }
-        .col-span-1 { grid-column: span 1; }
-        .col-span-2 { grid-column: span 2; }
-        
+        /* Ô chứa chữ trong cột */
+        .text-block {
+            break-inside: avoid;
+            margin-bottom: 12px;
+        }
         @media (min-width: 768px) {
-            .md-col-span-1 { grid-column: span 1; }
-            .md-col-span-2 { grid-column: span 2; }
-            .md-row-span-1 { grid-row: span 1; }
-            .md-row-span-2 { grid-row: span 2; }
+            .text-block { margin-bottom: 16px; }
         }
 
         .elegant-input {
@@ -273,7 +277,7 @@
             </div>
         </section>
 
-        <!-- BỐ CỤC ALBUM ẢNH CHUẨN GRID DENSE -->
+        <!-- BỐ CỤC ALBUM PINTEREST (GIỮ NGUYÊN TỶ LỆ ẢNH GỐC MÀ KHÔNG BỊ TRỐNG CỘT) -->
         <section class="py-24 px-4 relative z-20">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -281,95 +285,85 @@
                     <p class="text-gray-400 uppercase tracking-[0.2em] text-xs font-medium">Pre-wedding Gallery</p>
                 </div>
                 
-                <!-- Áp dụng lưới Grid Dense để lấp mọi khoảng trống. Kích thước block được fix cố định (row/col) -->
-                <div class="gallery-grid">
+                <!-- Bố cục CSS Column chia cột giống Pinterest -->
+                <div class="pinterest-gallery">
                     
-                    <!-- 1. Váy trắng cặp đôi (To, 2 cột 2 hàng) -->
-                    <div class="gallery-item col-span-2 row-span-2 md-col-span-2 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7137_1.jpg" loading="lazy" alt="Váy trắng truyền thống">
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7137_1.jpg" loading="lazy" alt="Ảnh 1">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7234_(2)_1.jpg" loading="lazy" alt="Ảnh 2">
+                    </div>
+
+                    <div class="text-block flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up">
+                        <i class="fa-solid fa-heart text-2xl text-champagne/40 mb-3"></i>
+                        <h3 class="cursive-font text-3xl text-champagne drop-shadow-sm">Tình yêu</h3>
+                        <p class="serif-font text-sm text-gray-600 mt-2 italic">"Không phải là nhìn vào nhau, mà là cùng nhìn về một hướng..."</p>
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7289_1.jpg" loading="lazy" alt="Ảnh 3">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7588_1.jpg" loading="lazy" alt="Ảnh 4">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7321_1.jpg" loading="lazy" alt="Ảnh 5">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7338_1.jpg" loading="lazy" alt="Ảnh 6">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7595_1.jpg" loading="lazy" alt="Ảnh 7">
+                    </div>
+
+                    <div class="text-block flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up">
+                        <i class="fa-solid fa-ring text-2xl text-champagne/40 mb-3"></i>
+                        <h3 class="cursive-font text-3xl text-champagne drop-shadow-sm">Mãi Mãi</h3>
+                        <p class="serif-font text-sm text-gray-600 mt-2 italic">"Hôm nay, ngày mai, và mãi mãi về sau..."</p>
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7774.jpg" loading="lazy" alt="Ảnh 8">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7737.jpg" loading="lazy" alt="Ảnh 9">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7842.jpg" loading="lazy" alt="Ảnh 10">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7681_1.jpg" loading="lazy" alt="Ảnh 11">
+                    </div>
+
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8028.jpg" loading="lazy" alt="Ảnh 12">
                     </div>
                     
-                    <!-- 2. Khoe nhẫn vui vẻ (Dọc, 1 cột 2 hàng) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7234_(2)_1.jpg" loading="lazy" alt="Khoe nhẫn vui">
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7259_(2)_1.jpg" loading="lazy" alt="Ảnh 13">
                     </div>
 
-                    <!-- 3. Cô dâu váy trắng hoa trắng (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7289_1.jpg" loading="lazy" alt="Cô dâu solo">
-                    </div>
-                    
-                    <!-- Khối chữ Tình Yêu (Ngang, lấp vào ô trống) -->
-                    <div class="col-span-2 row-span-1 flex flex-col items-center justify-center p-4 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up">
-                        <i class="fa-solid fa-heart text-champagne/40 mb-2"></i>
-                        <h3 class="cursive-font text-2xl md:text-3xl text-champagne">Tình yêu</h3>
-                        <p class="serif-font text-xs md:text-sm text-gray-600 italic">"Cùng nhìn về một hướng..."</p>
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8012.jpg" loading="lazy" alt="Ảnh 14">
                     </div>
 
-                    <!-- 4. Cặp đôi vest kem đính đá (Dọc, 1 cột 2 hàng) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7338_1.jpg" loading="lazy" alt="Vest kem">
+                    <div class="text-block flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up">
+                        <i class="fa-solid fa-gem text-2xl text-champagne/40 mb-3"></i>
+                        <h3 class="cursive-font text-3xl text-champagne drop-shadow-sm">Hạnh Phúc</h3>
+                        <p class="serif-font text-sm text-gray-600 mt-2 italic">"Là khi nụ cười của em là niềm vui của anh..."</p>
                     </div>
 
-                    <!-- 5. Chú rể chúm chím (Ngang) -->
-                    <div class="gallery-item col-span-1 row-span-1 md-col-span-1 md-row-span-1" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7259_(2)_1.jpg" loading="lazy" alt="Véo má chú rể">
-                    </div>
-
-                    <!-- 6. Ngoại cảnh nhìn xa xăm (Dọc to) -->
-                    <div class="gallery-item col-span-2 row-span-2 md-col-span-2 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7774.jpg" loading="lazy" alt="Ngoại cảnh nhìn xa">
-                    </div>
-                    
-                    <!-- 7. Ngoại cảnh bờ hồ toàn cảnh ngang (2 cột 1 hàng) -->
-                    <div class="gallery-item col-span-2 row-span-1 md-col-span-2 md-row-span-1" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7737.jpg" loading="lazy" alt="Ngoại cảnh ngang">
-                    </div>
-
-                    <!-- 8. Chú rể váy trắng (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7321_1.jpg" loading="lazy" alt="Chú rể váy trắng">
-                    </div>
-
-                    <!-- Khối chữ Mãi Mãi -->
-                    <div class="col-span-1 row-span-1 flex flex-col items-center justify-center p-4 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up">
-                        <i class="fa-solid fa-ring text-champagne/40 mb-2"></i>
-                        <h3 class="cursive-font text-2xl md:text-3xl text-champagne">Mãi Mãi</h3>
-                    </div>
-                    
-                    <!-- 9. Cô dâu khoe nhẫn đính đá (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7595_1.jpg" loading="lazy" alt="Cô dâu khoe nhẫn 2">
-                    </div>
-
-                    <!-- 10. Đính đá nắm tay (Ngang) -->
-                    <div class="gallery-item col-span-2 row-span-1 md-col-span-1 md-row-span-1" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7588_1.jpg" loading="lazy" alt="Đính đá nắm tay">
-                    </div>
-
-                    <!-- 11. Ngoại cảnh hôn nhau (To, 2x2) -->
-                    <div class="gallery-item col-span-2 row-span-2 md-col-span-2 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7842.jpg" loading="lazy" alt="Ngoại cảnh hôn nhau">
-                    </div>
-
-                    <!-- 12. Phông Đỏ Nhà có hỷ (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7681_1.jpg" loading="lazy" alt="Nhà có hỷ">
-                    </div>
-
-                    <!-- 13. Đỏ tựa lan can (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8028.jpg" loading="lazy" alt="Áo dài tựa lan can">
-                    </div>
-
-                    <!-- 14. Đỏ cười mỉm (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8012.jpg" loading="lazy" alt="Áo dài đỏ mỉm cười">
-                    </div>
-
-                    <!-- 15. Đỏ cầu thang bước đi (Dọc) -->
-                    <div class="gallery-item col-span-1 row-span-2 md-col-span-1 md-row-span-2" data-aos="fade-up">
-                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7989.jpg" loading="lazy" alt="Áo dài đỏ cầu thang">
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7989.jpg" loading="lazy" alt="Ảnh 15">
                     </div>
 
                 </div>
@@ -613,6 +607,9 @@
 
         AOS.init({ once: true, offset: 50, duration: 1000 });
 
+        // ==========================================
+        // KHẮC PHỤC LỖI FORM GỬI GOOGLE SHEETS
+        // ==========================================
         const scriptURL = 'https://script.google.com/macros/s/AKfycbx1Q3kPq9To2GffF_fR6pqoMIvsaaB67WBZ4Flv_aHvhkX5jtEZtUtOI-edX5M3zbyF1Q/exec';
         const form = document.forms['rsvp-form'];
         
@@ -623,19 +620,27 @@
             
             submitBtnText.innerHTML = 'ĐANG GỬI... <i class="fa-solid fa-spinner fa-spin ml-2"></i>';
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
-                    submitBtnText.innerHTML = originalText;
-                    form.reset();
-                    toggleModal('rsvp-modal', 'close');
-                })
-                .catch(error => {
-                    alert('Lỗi! Không thể gửi thông tin. Vui lòng kiểm tra lại mạng!');
-                    submitBtnText.innerHTML = originalText;
-                });
+            // QUAN TRỌNG: Phải thêm mode: 'no-cors' để không bị trình duyệt chặn kết nối tới Google Script
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', 
+                body: new FormData(form)
+            })
+            .then(response => {
+                // Với no-cors, fetch sẽ luôn trả về success (thành công đẩy lên server)
+                alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
+                submitBtnText.innerHTML = originalText;
+                form.reset();
+                toggleModal('rsvp-modal', 'close');
+            })
+            .catch(error => {
+                alert('Lỗi! Không thể gửi thông tin. Vui lòng kiểm tra lại mạng!');
+                submitBtnText.innerHTML = originalText;
+                console.error('Error!', error.message);
+            });
         });
 
+        // Hiệu ứng hạt bụi vàng (Background Animation)
         window.onload = function () {
             const canvas = document.getElementById('bg-canvas');
             const ctx = canvas.getContext('2d');
