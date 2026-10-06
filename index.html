@@ -143,9 +143,9 @@
                 
                 <!-- Bố cục tên đan xen (So le) nghệ thuật - CẬP NHẬT CHỐNG XUỐNG DÒNG -->
                 <div class="w-full py-6 flex flex-col items-center justify-center gap-3 md:gap-5">
-                    <!-- Tên Cô Dâu lệch trái -->
+                    <!-- Tên Chú Rể lệch trái -->
                     <div class="w-full flex justify-center transform -translate-x-6 md:-translate-x-12">
-                        <h1 class="cursive-font text-7xl md:text-8xl lg:text-9xl text-champagne drop-shadow-sm leading-none whitespace-nowrap">Trà My</h1>
+                        <h1 class="cursive-font text-7xl md:text-8xl lg:text-9xl text-champagne drop-shadow-sm leading-none whitespace-nowrap">Hải Anh</h1>
                     </div>
                     
                     <!-- Ký hiệu & -->
@@ -153,9 +153,9 @@
                         <span class="serif-font text-2xl md:text-4xl text-gray-500 font-light">&amp;</span>
                     </div>
                     
-                    <!-- Tên Chú Rể lệch phải -->
+                    <!-- Tên Cô Dâu lệch phải -->
                     <div class="w-full flex justify-center transform translate-x-6 md:translate-x-12">
-                        <h1 class="cursive-font text-7xl md:text-8xl lg:text-9xl text-champagne drop-shadow-sm leading-none whitespace-nowrap">Hải Anh</h1>
+                        <h1 class="cursive-font text-7xl md:text-8xl lg:text-9xl text-champagne drop-shadow-sm leading-none whitespace-nowrap">Trà My</h1>
                     </div>
                 </div>
                 
@@ -181,14 +181,16 @@
                     <p class="text-gray-400 uppercase tracking-[0.2em] text-xs font-medium">Lịch Trình Hôn Lễ</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Sử dụng items-stretch để ép 2 bảng cao bằng nhau -->
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
                     
                     <!-- LỄ VU QUY (NHÀ GÁI) -->
-                    <div class="glass-panel p-8 md:p-12 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-panel p-8 md:p-12 text-center flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="serif-font text-4xl mb-2 text-gray-800">Lễ Vu Quy</h3>
                         <p class="text-[10px] uppercase tracking-[0.2em] text-champagne mb-8 font-semibold">Nhà Gái</p>
                         
-                        <div class="text-gray-600 mb-8 space-y-1 font-light">
+                        <!-- flex-grow giúp đẩy phần nội dung bên dưới xuống tận cùng -->
+                        <div class="text-gray-600 mb-8 space-y-1 font-light flex-grow">
                             <p class="text-lg">Ông: <span class="font-medium">Trần Việt Hưng</span></p>
                             <p class="text-lg">Bà: <span class="font-medium">Phạm Thị Thảo</span></p>
                             <p class="text-xs opacity-70 mt-3 px-4">Tư gia: 62/71 đường Thái Bình, phường Thiên Trường, tỉnh Ninh Bình</p>
@@ -210,18 +212,21 @@
                             </div>
                         </div>
                         
-                        <!-- Nút Google Map 1: Thêm relative z-30 để đảm bảo luôn bấm được -->
-                        <a href="https://maps.google.com/?q=Phim+trường+Selena,+đường+Thái+Bình,+phường+Thiên+Trường,+tỉnh+Ninh+Bình" target="_blank" class="relative z-30 inline-block px-8 py-3 bg-champagne text-white rounded-sm text-xs font-semibold tracking-widest uppercase hover:bg-[#b08d4a] transition duration-300 shadow-md">
-                            Xem Bản Đồ
-                        </a>
+                        <!-- mt-auto giúp nút bấm luôn bám sát đáy thẻ -->
+                        <div class="mt-auto pt-4">
+                            <a href="https://maps.google.com/?q=Phim+trường+Selena,+đường+Thái+Bình,+phường+Thiên+Trường,+tỉnh+Ninh+Bình" target="_blank" class="relative z-30 inline-block px-8 py-3 bg-champagne text-white rounded-sm text-xs font-semibold tracking-widest uppercase hover:bg-[#b08d4a] transition duration-300 shadow-md w-full sm:w-auto">
+                                XEM BẢN ĐỒ
+                            </a>
+                        </div>
                     </div>
 
                     <!-- LỄ THÀNH HÔN (NHÀ TRAI) -->
-                    <div class="glass-panel p-8 md:p-12 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-panel p-8 md:p-12 text-center flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="serif-font text-4xl mb-2 text-gray-800">Lễ Thành Hôn</h3>
                         <p class="text-[10px] uppercase tracking-[0.2em] text-champagne mb-8 font-semibold">Nhà Trai</p>
                         
-                        <div class="text-gray-600 mb-8 space-y-1 font-light">
+                        <!-- flex-grow giúp đẩy phần nội dung bên dưới xuống tận cùng -->
+                        <div class="text-gray-600 mb-8 space-y-1 font-light flex-grow">
                             <p class="text-lg">Ông: <span class="font-medium">Nguyễn Văn Kiêm</span></p>
                             <p class="text-lg">Bà: <span class="font-medium">Phạm Thị Thuỷ</span></p>
                             <p class="text-xs opacity-70 mt-3 px-4">Tư gia: Xóm Dương - Thôn Hòa Bình - Xã Bình Sơn - Tỉnh Ninh Bình</p>
@@ -232,7 +237,7 @@
                         </div>
 
                         <div class="space-y-4 mb-10 text-gray-700">
-                            <p class="text-lg font-light"><i class="fa-regular fa-clock text-champagne mr-2"></i> <strong>13:00</strong> | Chủ Nhật</p>
+                            <p class="text-lg font-light"><i class="fa-regular fa-clock text-champagne mr-2"></i> <strong>12:30</strong> | Chủ Nhật</p>
                             <p class="font-medium text-2xl text-champagne serif-font tracking-wide">25 / 10 / 2026</p>
                             <p class="text-xs italic text-gray-400">(Tức ngày 16 tháng 09 năm Bính Ngọ)</p>
                             
@@ -243,10 +248,12 @@
                             </div>
                         </div>
                         
-                        <!-- Nút Google Map 2: Thêm relative z-30 để đảm bảo luôn bấm được -->
-                        <a href="https://maps.app.goo.gl/PmJ3HzgLNhvadQYXA?g_st=ac" target="_blank" class="relative z-30 inline-block px-8 py-3 border border-champagne text-champagne rounded-sm text-xs font-semibold tracking-widest uppercase hover:bg-champagne hover:text-white transition duration-300 shadow-sm">
-                            Bản Đồ Nhà Trai
-                        </a>
+                        <!-- mt-auto giúp nút bấm luôn bám sát đáy thẻ -->
+                        <div class="mt-auto pt-4">
+                            <a href="https://maps.app.goo.gl/PmJ3HzgLNhvadQYXA?g_st=ac" target="_blank" class="relative z-30 inline-block px-8 py-3 bg-champagne text-white rounded-sm text-xs font-semibold tracking-widest uppercase hover:bg-[#b08d4a] transition duration-300 shadow-md w-full sm:w-auto">
+                                XEM BẢN ĐỒ
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -264,17 +271,17 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                     <!-- Ảnh 1 (Ảnh chính to) -->
                     <div class="gallery-item col-span-2 row-span-2" data-aos="fade-up">
-                        <img src="252A7842.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x800/FCFBF9/C5A059?text=Ảnh+Hồ+Nước'" alt="Ảnh cưới 1" class="w-full h-full object-cover aspect-square md:aspect-auto">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7842.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x800/FCFBF9/C5A059?text=Ảnh+Hồ+Nước'" alt="Ảnh cưới 1" class="w-full h-full object-cover aspect-square md:aspect-auto">
                     </div>
                     
                     <!-- Ảnh 2 -->
                     <div class="gallery-item col-span-1 row-span-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="252A7989.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+Áo+Dài'" alt="Ảnh cưới 2" class="w-full h-full object-cover aspect-[2/3]">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7989.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+Áo+Dài'" alt="Ảnh cưới 2" class="w-full h-full object-cover aspect-[2/3]">
                     </div>
 
                     <!-- Ảnh 3 -->
                     <div class="gallery-item col-span-1 row-span-2" data-aos="fade-up" data-aos-delay="200">
-                        <img src="252A7137_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+Studio'" alt="Ảnh cưới 3" class="w-full h-full object-cover aspect-[2/3]">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7137_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+Studio'" alt="Ảnh cưới 3" class="w-full h-full object-cover aspect-[2/3]">
                     </div>
 
                     <!-- Khối CHỮ ĐAN XEN 1 -->
@@ -286,22 +293,22 @@
 
                     <!-- Ảnh 4 (Ngang) -->
                     <div class="gallery-item col-span-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="252A7737.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/FCFBF9/C5A059?text=Nắm+Tay'" alt="Ảnh cưới 4" class="w-full h-full object-cover aspect-video">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7737.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/FCFBF9/C5A059?text=Nắm+Tay'" alt="Ảnh cưới 4" class="w-full h-full object-cover aspect-video">
                     </div>
 
                     <!-- Ảnh 5 -->
                     <div class="gallery-item col-span-1 row-span-2" data-aos="fade-up">
-                        <img src="252A8012.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+5'" alt="Ảnh cưới 5" class="w-full h-full object-cover aspect-[2/3]">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A8012.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+5'" alt="Ảnh cưới 5" class="w-full h-full object-cover aspect-[2/3]">
                     </div>
 
                     <!-- Ảnh 6 -->
                     <div class="gallery-item col-span-1 row-span-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="252A7289_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Cô+Dâu'" alt="Ảnh cưới 6" class="w-full h-full object-cover aspect-[2/3]">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7289_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Cô+Dâu'" alt="Ảnh cưới 6" class="w-full h-full object-cover aspect-[2/3]">
                     </div>
 
                     <!-- Ảnh 7 (Ảnh chính to thứ 2) -->
                     <div class="gallery-item col-span-2 row-span-2" data-aos="fade-up" data-aos-delay="200">
-                        <img src="252A7586_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x800/FCFBF9/C5A059?text=Cô+Dâu+Chú+Rể'" alt="Ảnh cưới 7" class="w-full h-full object-cover aspect-square md:aspect-auto">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7586_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x800/FCFBF9/C5A059?text=Cô+Dâu+Chú+Rể'" alt="Ảnh cưới 7" class="w-full h-full object-cover aspect-square md:aspect-auto">
                     </div>
 
                     <!-- Khối CHỮ ĐAN XEN 2 -->
@@ -313,27 +320,27 @@
                     
                     <!-- Ảnh 8 -->
                     <div class="gallery-item col-span-1" data-aos="fade-up">
-                        <img src="252A7321_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Chú+Rể'" alt="Ảnh cưới 8" class="w-full h-full object-cover aspect-square">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7321_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Chú+Rể'" alt="Ảnh cưới 8" class="w-full h-full object-cover aspect-square">
                     </div>
 
                     <!-- Ảnh 9 -->
                     <div class="gallery-item col-span-1" data-aos="fade-up" data-aos-delay="100">
-                        <img src="252A7234_(2)_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Nhẫn+Cưới'" alt="Ảnh cưới 9" class="w-full h-full object-cover aspect-square">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7234_(2)_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Nhẫn+Cưới'" alt="Ảnh cưới 9" class="w-full h-full object-cover aspect-square">
                     </div>
                     
                     <!-- Ảnh 10 -->
                     <div class="gallery-item col-span-1 row-span-2" data-aos="fade-up" data-aos-delay="200">
-                        <img src="252A7681_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Nền+Đỏ'" alt="Ảnh cưới 10" class="w-full h-full object-cover aspect-[2/3]">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7681_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Nền+Đỏ'" alt="Ảnh cưới 10" class="w-full h-full object-cover aspect-[2/3]">
                     </div>
                     
                     <!-- Ảnh 11 -->
                     <div class="gallery-item col-span-1 row-span-2" data-aos="fade-up">
-                        <img src="252A7410_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+11'" alt="Ảnh cưới 11" class="w-full h-full object-cover aspect-[2/3]">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7410_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x900/FCFBF9/C5A059?text=Ảnh+11'" alt="Ảnh cưới 11" class="w-full h-full object-cover aspect-[2/3]">
                     </div>
                     
                     <!-- Ảnh 12 (Ngang) -->
                     <div class="gallery-item col-span-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="252A7588_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/FCFBF9/C5A059?text=Ảnh+12'" alt="Ảnh cưới 12" class="w-full h-full object-cover aspect-video">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7588_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/FCFBF9/C5A059?text=Ảnh+12'" alt="Ảnh cưới 12" class="w-full h-full object-cover aspect-video">
                     </div>
                     
                     <!-- Khối CHỮ ĐAN XEN 3 -->
@@ -345,17 +352,17 @@
                     
                     <!-- Ảnh 13 (Ngang) -->
                     <div class="gallery-item col-span-2" data-aos="fade-up">
-                        <img src="252A7595_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/FCFBF9/C5A059?text=Ảnh+13'" alt="Ảnh cưới 13" class="w-full h-full object-cover aspect-video">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7595_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/FCFBF9/C5A059?text=Ảnh+13'" alt="Ảnh cưới 13" class="w-full h-full object-cover aspect-video">
                     </div>
                     
                     <!-- Ảnh 14 -->
                     <div class="gallery-item col-span-1" data-aos="fade-up" data-aos-delay="100">
-                        <img src="252A8028.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Ảnh+14'" alt="Ảnh cưới 14" class="w-full h-full object-cover aspect-square">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A8028.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Ảnh+14'" alt="Ảnh cưới 14" class="w-full h-full object-cover aspect-square">
                     </div>
                     
                     <!-- Ảnh 15 -->
                     <div class="gallery-item col-span-1" data-aos="fade-up" data-aos-delay="200">
-                        <img src="252A7259_(2)_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Ảnh+15'" alt="Ảnh cưới 15" class="w-full h-full object-cover aspect-square">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/252A7259_(2)_1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FCFBF9/C5A059?text=Ảnh+15'" alt="Ảnh cưới 15" class="w-full h-full object-cover aspect-square">
                     </div>
 
                 </div>
@@ -445,7 +452,7 @@
             <div class="flex justify-center mt-8 mb-4">
                 <span class="w-20 h-[1px] bg-gradient-to-r from-transparent via-champagne to-transparent inline-block"></span>
             </div>
-            <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">Cô Dâu - Chú Rể</p>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">Chú Rể - Cô Dâu</p>
         </div>
     </div>
 
@@ -466,27 +473,27 @@
                 <p class="text-gray-500 text-xs md:text-sm font-light italic px-4">Vui lòng phản hồi để gia đình chúng tôi chuẩn bị đón tiếp chu đáo nhất</p>
             </div>
             
-            <form onsubmit="event.preventDefault(); alert('Cảm ơn Quý vị! Lời hồi đáp đã được gửi đi.'); this.reset(); toggleModal('rsvp-modal', 'close');" class="space-y-5 relative z-10">
+            <form id="rsvp-form" class="space-y-5 relative z-10">
                 <!-- Tên khách mời -->
                 <div class="relative group">
                     <i class="fa-regular fa-user absolute left-2 top-1/2 transform -translate-y-1/2 text-champagne/60 group-focus-within:text-champagne transition-colors"></i>
-                    <input type="text" required class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 placeholder-gray-400" placeholder="Họ và tên...">
+                    <input type="text" name="HoTen" required class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 placeholder-gray-400" placeholder="Họ và tên...">
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                     <!-- Số điện thoại -->
                     <div class="relative group">
                         <i class="fa-solid fa-mobile-screen absolute left-2 top-1/2 transform -translate-y-1/2 text-champagne/60 group-focus-within:text-champagne transition-colors"></i>
-                        <input type="tel" required class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 placeholder-gray-400" placeholder="Số điện thoại...">
+                        <input type="tel" name="SoDienThoai" required class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 placeholder-gray-400" placeholder="Số điện thoại...">
                     </div>
                     <!-- Tình trạng tham dự -->
                     <div class="relative group flex items-center justify-between px-2 py-3 border-b border-gray-200">
                         <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
-                            <input type="radio" name="attend" value="yes" checked class="accent-champagne">
+                            <input type="radio" name="ThamGia" value="Có tham gia" checked class="accent-champagne">
                             Tham gia
                         </label>
                         <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
-                            <input type="radio" name="attend" value="no" class="accent-champagne">
+                            <input type="radio" name="ThamGia" value="Rất tiếc" class="accent-champagne">
                             Rất tiếc
                         </label>
                     </div>
@@ -495,12 +502,12 @@
                 <!-- Số người -->
                 <div class="relative group">
                     <i class="fa-solid fa-user-group absolute left-2 top-1/2 transform -translate-y-1/2 text-champagne/60 z-10 group-focus-within:text-champagne transition-colors"></i>
-                    <select class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 appearance-none relative cursor-pointer">
-                        <option value="" disabled selected hidden>Số người tham dự cùng bạn...</option>
-                        <option value="1">Đi một mình (1 người)</option>
-                        <option value="2">Đi cùng người thương (2 người)</option>
-                        <option value="3">Đi cùng gia đình (3 người)</option>
-                        <option value="4">4+ người</option>
+                    <select name="SoNguoi" class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 appearance-none relative cursor-pointer">
+                        <option value="Không xác định" disabled selected hidden>Số người tham dự cùng bạn...</option>
+                        <option value="1 Người">Đi một mình (1 người)</option>
+                        <option value="2 Người">Đi cùng người thương (2 người)</option>
+                        <option value="3 Người">Đi cùng gia đình (3 người)</option>
+                        <option value="4+ Người">4+ người</option>
                     </select>
                     <i class="fa-solid fa-chevron-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-300 text-xs pointer-events-none"></i>
                 </div>
@@ -508,14 +515,14 @@
                 <!-- Lời chúc -->
                 <div class="relative group pt-2">
                     <i class="fa-regular fa-envelope absolute left-2 top-5 text-champagne/60 group-focus-within:text-champagne transition-colors"></i>
-                    <textarea rows="3" class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 resize-none placeholder-gray-400" placeholder="Lời chúc gửi tặng gia đình..."></textarea>
+                    <textarea name="LoiChuc" rows="3" class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 resize-none placeholder-gray-400" placeholder="Lời chúc gửi tặng gia đình..."></textarea>
                 </div>
                 
                 <!-- Nút gửi -->
                 <div class="pt-4 flex justify-center">
-                    <button type="submit" class="group relative px-8 py-3 bg-champagne text-white rounded-full overflow-hidden hover:shadow-[0_10px_20px_rgba(197,160,89,0.3)] transition-all duration-500">
+                    <button type="submit" id="submit-btn" class="group relative px-8 py-3 bg-champagne text-white rounded-full overflow-hidden hover:shadow-[0_10px_20px_rgba(197,160,89,0.3)] transition-all duration-500">
                         <span class="absolute top-0 left-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
-                        <span class="relative text-xs uppercase tracking-[0.2em] font-medium flex items-center gap-2">
+                        <span class="relative text-xs uppercase tracking-[0.2em] font-medium flex items-center gap-2" id="submit-text">
                             Gửi Hồi Đáp <i class="fa-solid fa-paper-plane text-white/80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                         </span>
                     </button>
@@ -551,6 +558,44 @@
 
         // Khởi tạo hiệu ứng cuộn trang (AOS)
         AOS.init({ once: true, offset: 50, duration: 1000 });
+
+        // BẠN SẼ DÁN ĐƯỜNG LINK GOOGLE SCRIPT VÀO GIỮA 2 DẤU NHÁY ĐƠN BÊN DƯỚI
+        const scriptURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+        
+        const form = document.forms['rsvp-form'];
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault(); // Chặn việc tải lại trang
+            
+            const submitBtnText = document.getElementById('submit-text');
+            const originalText = submitBtnText.innerHTML;
+            // Hiển thị trạng thái đang gửi
+            submitBtnText.innerHTML = 'ĐANG GỬI... <i class="fa-solid fa-spinner fa-spin ml-2"></i>';
+
+            // Kiểm tra xem đã dán link scriptURL chưa
+            if(scriptURL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+                setTimeout(() => {
+                    alert('LƯU Ý: Bạn chưa dán đường link Google Sheets vào Code. Hiện tại form chỉ báo gửi thành công giả lập!');
+                    submitBtnText.innerHTML = originalText;
+                    form.reset();
+                    toggleModal('rsvp-modal', 'close');
+                }, 1500);
+                return;
+            }
+
+            // Gửi dữ liệu đi
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
+                    submitBtnText.innerHTML = originalText;
+                    form.reset();
+                    toggleModal('rsvp-modal', 'close');
+                })
+                .catch(error => {
+                    alert('Lỗi! Không thể gửi thông tin. Vui lòng kiểm tra lại mạng!');
+                    submitBtnText.innerHTML = originalText;
+                });
+        });
 
         // ==========================================
         // HIỆU ỨNG CANVAS - BỌT CHAMPAGNE TƯƠNG TÁC
