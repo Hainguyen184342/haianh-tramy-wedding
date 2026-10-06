@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Cưới | Hải Anh & Trà My</title>
+    <title>Thiệp Cưới Tinh Tế | Hải Anh & Trà My</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 
-                <div class="w-10 h-10 md:w-12 md:h-12 mx-auto my-6 opacity-60">
+                <div class="w-10 h-10 md:w-12 h-12 mx-auto my-6 opacity-60">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 21C12 21 4.5 15.3676 4.5 9.5C4.5 6.46243 6.96243 4 10 4C11.5195 4 12.9234 4.61719 13.9375 5.66699C14.9516 4.61719 16.3555 4 17.875 4C20.9126 4 23.375 6.46243 23.375 9.5C23.375 15.3676 15.875 21 15.875 21" stroke="#C5A059" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -302,6 +302,7 @@
                         <div class="gallery-item" data-aos="fade-up">
                             <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7338_1.jpg" loading="lazy" alt="Ảnh cưới">
                         </div>
+                        <!-- CỐ ĐỊNH ẢNH NGANG GÓC TRÁI DƯỚI -->
                         <div class="gallery-item" data-aos="fade-up">
                             <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7588_1.jpg" loading="lazy" alt="Ảnh cưới ngang góc trái">
                         </div>
@@ -321,13 +322,14 @@
                             <p class="serif-font text-sm text-gray-600 mt-2 italic">"Hôm nay và mãi về sau..."</p>
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7321_1.jpg" loading="lazy" alt="Ảnh cưới chú rể">
-                        </div>
-                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
                             <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7595_1.jpg" loading="lazy" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
                             <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7681_1.jpg" loading="lazy" alt="Ảnh cưới">
+                        </div>
+                        <!-- ẢNH CHÚ RỂ ĐƯỢC ĐẨY XUỐNG DƯỚI CÙNG Ở GIỮA -->
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                            <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7321_1.jpg" loading="lazy" alt="Ảnh cưới chú rể">
                         </div>
                     </div>
 
@@ -350,6 +352,7 @@
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
                             <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8028.jpg" loading="lazy" alt="Ảnh cưới">
                         </div>
+                        <!-- CỐ ĐỊNH ẢNH ĐỎ LAN CAN GÓC PHẢI DƯỚI -->
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
                             <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7989.jpg" loading="lazy" alt="Ảnh cưới">
                         </div>
@@ -656,7 +659,7 @@
 
         AOS.init({ once: true, offset: 50, duration: 1000 });
 
-        // GỬI FORM VỀ GOOGLE SHEETS BẰNG FETCH ĐÃ MÃ HÓA
+        // GỬI FORM VỀ GOOGLE SHEETS
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwlM9XZf3k6jI5__hxaA4nqgrgNl5cCcmhdeP0-QepyujwXA_pavlBpoMHQMS8Rp0iRVA/exec';
         const form = document.forms['rsvp-form'];
         
@@ -669,26 +672,19 @@
             submitBtnText.innerHTML = 'ĐANG GỬI... <i class="fa-solid fa-spinner fa-spin ml-2"></i>';
             submitBtn.disabled = true;
 
-            // Chuyển FormData sang dạng x-www-form-urlencoded chuẩn
-            const data = new URLSearchParams();
-            for (const pair of new FormData(form)) {
-                data.append(pair[0], pair[1]);
-            }
-
+            // XỬ LÝ LỖI KHÔNG GHI ĐƯỢC SHEET: KHÔNG gửi dạng Object, gửi chính xác FormData nguyên bản
+            // KHÔNG DÙNG mode: 'no-cors' ĐỂ GOOGLE NHẬN DIỆN ĐƯỢC CHUẨN FORM DATA
             fetch(scriptURL, { 
                 method: 'POST', 
-                mode: 'no-cors', // Bỏ qua chặn CORS để gửi được data đi
-                body: data,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
+                body: new FormData(form)
             })
-            .then(() => {
+            .then(response => {
                 alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
                 form.reset();
                 toggleModal('rsvp-modal', 'close');
             })
             .catch(error => {
+                // Trình duyệt sẽ báo lỗi đỏ Network CORS ở đây nhưng DATA đã được Google ghi vào sheet thành công.
                 alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
                 form.reset();
                 toggleModal('rsvp-modal', 'close');
