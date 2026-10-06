@@ -309,4 +309,457 @@
                         <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7234_(2)_1.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover">
                     </div>
                     <div class="gallery-item col-span-1" data-aos="fade-up">
-                        <img src="
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7338_1.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item col-span-1" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7595_1.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover object-top">
+                    </div>
+                    <div class="gallery-item col-span-1" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7774.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover">
+                    </div>
+
+                    <!-- DÒNG 4 -->
+                    <div class="col-span-1 flex flex-col items-center justify-center p-2 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center aspect-[2/3] w-full h-full" data-aos="fade-up">
+                        <i class="fa-solid fa-gem text-2xl md:text-3xl text-champagne/40 mb-2"></i>
+                        <h3 class="cursive-font text-3xl md:text-4xl text-champagne drop-shadow-sm mb-1">Hạnh Phúc</h3>
+                        <p class="serif-font text-xs text-gray-500 italic px-2 hidden sm:block">"Nụ cười của em là niềm vui của anh..."</p>
+                    </div>
+                    <div class="gallery-item col-span-1" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7681_1.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover object-top">
+                    </div>
+                    <!-- Ảnh ngang lấp 2 cột -->
+                    <div class="gallery-item col-span-2" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7842.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[4/3] md:aspect-auto w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- DÒNG 5 -->
+                    <div class="gallery-item col-span-1" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A7989.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item col-span-1" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8012.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item col-span-1" data-aos="fade-up">
+                        <img src="https://raw.githubusercontent.com/Hainguyen184342/haianh-tramy-wedding/main/image/252A8028.jpg" loading="lazy" alt="Ảnh cưới" class="aspect-[2/3] w-full h-full object-cover">
+                    </div>
+                    <div class="col-span-1 flex flex-col items-center justify-center p-2 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center aspect-[2/3] w-full h-full" data-aos="fade-up">
+                        <i class="fa-solid fa-ring text-2xl md:text-3xl text-champagne/40 mb-2"></i>
+                        <h3 class="cursive-font text-3xl md:text-4xl text-champagne drop-shadow-sm mb-1">Mãi Mãi</h3>
+                        <p class="serif-font text-xs text-gray-500 italic px-2 hidden sm:block">"Hôm nay và mãi về sau..."</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Lightbox Modal (Phóng to ảnh) -->
+            <div id="image-lightbox" class="fixed inset-0 z-[200] hidden bg-black/95 flex items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-md">
+                <button onclick="closeLightbox()" class="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-50 p-3 bg-black/20 rounded-full hover:bg-black/50">
+                    <i class="fa-solid fa-xmark text-3xl"></i>
+                </button>
+                <img id="lightbox-img" src="" alt="Zoomed Image" class="max-w-[95vw] max-h-[90vh] object-contain transform scale-95 transition-transform duration-300 shadow-2xl rounded-sm">
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const galleryImages = document.querySelectorAll('.gallery-item img');
+                    const lightbox = document.getElementById('image-lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+
+                    galleryImages.forEach(img => {
+                        img.addEventListener('click', () => {
+                            lightboxImg.src = img.src;
+                            lightbox.classList.remove('hidden');
+                            setTimeout(() => {
+                                lightbox.classList.remove('opacity-0');
+                                lightboxImg.classList.remove('scale-95');
+                            }, 20);
+                        });
+                    });
+
+                    lightbox.addEventListener('click', (e) => {
+                        if(e.target === lightbox) {
+                            closeLightbox();
+                        }
+                    });
+                });
+
+                function closeLightbox() {
+                    const lightbox = document.getElementById('image-lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+                    
+                    lightbox.classList.add('opacity-0');
+                    lightboxImg.classList.add('scale-95');
+                    
+                    setTimeout(() => {
+                        lightbox.classList.add('hidden');
+                    }, 300);
+                }
+            </script>
+        </section>
+
+        <!-- Hòm Thư Tri Ân & Hồi Đáp -->
+        <section class="py-24 px-4 relative z-20">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative z-10">
+                
+                <!-- Hộp Quà Cưới -->
+                <button onclick="toggleModal('gift-modal', 'open')" class="glass-panel px-8 py-10 flex flex-col items-center justify-center gap-4 hover:shadow-[0_20px_40px_rgba(197,160,89,0.15)] hover:-translate-y-2 transition-all duration-700 group cursor-pointer border-champagne/30 rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+                    <div class="absolute top-0 left-0 w-16 h-16 border-t border-l border-champagne/40 rounded-tl-[2.5rem] m-3 transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-champagne/40 rounded-br-[2.5rem] m-3 transition-transform duration-700 group-hover:scale-110"></div>
+                    
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-white to-champagne/20 flex items-center justify-center shadow-inner group-hover:bg-champagne transition-all duration-500">
+                        <i class="fa-solid fa-gift text-3xl text-champagne group-hover:text-white transition-colors duration-500"></i>
+                    </div>
+                    <div class="text-center mt-2">
+                        <h3 class="serif-font text-3xl text-gray-800 tracking-wide">Gửi Quà Cưới</h3>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-champagne mt-2 font-medium">Hộp thư tri ân</p>
+                    </div>
+                </button>
+
+                <!-- Hộp Hồi Đáp (RSVP) -->
+                <button onclick="toggleModal('rsvp-modal', 'open')" class="glass-panel px-8 py-10 flex flex-col items-center justify-center gap-4 hover:shadow-[0_20px_40px_rgba(197,160,89,0.15)] hover:-translate-y-2 transition-all duration-700 group cursor-pointer border-champagne/30 rounded-[2.5rem] overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-16 h-16 border-t border-r border-champagne/40 rounded-tr-[2.5rem] m-3 transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-champagne/40 rounded-bl-[2.5rem] m-3 transition-transform duration-700 group-hover:scale-110"></div>
+                    
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-white to-champagne/20 flex items-center justify-center shadow-inner group-hover:bg-champagne transition-all duration-500">
+                        <i class="fa-regular fa-envelope-open text-3xl text-champagne group-hover:text-white transition-colors duration-500"></i>
+                    </div>
+                    <div class="text-center mt-2">
+                        <h3 class="serif-font text-3xl text-gray-800 tracking-wide">Hồi Đáp</h3>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-champagne mt-2 font-medium">Xác nhận tham dự</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-16 pb-12 text-center relative z-20 border-t border-gray-200/50 mt-10">
+            <h2 class="cursive-font text-5xl md:text-6xl text-gray-800 mb-6">Trân Trọng Cảm Ơn!</h2>
+            <p class="text-gray-500 mb-10 max-w-md mx-auto px-4 italic font-light text-sm leading-relaxed">
+                "Sự hiện diện của Quý vị là niềm vinh hạnh<br>cho gia đình chúng tôi."
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 mb-12">
+                <!-- Liên hệ chú rể -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:0376550159" class="w-12 h-12 rounded-full border border-champagne text-champagne flex items-center justify-center hover:bg-champagne hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-phone text-sm"></i>
+                    </a>
+                    <div class="text-left">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest">Liên hệ chú rể</p>
+                        <p class="text-lg font-medium tracking-wider text-gray-700">037 655 0159</p>
+                    </div>
+                </div>
+
+                <div class="w-12 h-[1px] bg-champagne/30 sm:hidden"></div>
+
+                <!-- Liên hệ cô dâu -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:0949259858" class="w-12 h-12 rounded-full border border-champagne text-champagne flex items-center justify-center hover:bg-champagne hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-phone text-sm"></i>
+                    </a>
+                    <div class="text-left">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest">Liên hệ cô dâu</p>
+                        <p class="text-lg font-medium tracking-wider text-gray-700">094 925 9858</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-[10px] text-gray-400 tracking-widest uppercase">© 2026 Hải Anh & Trà My Wedding</p>
+        </footer>
+
+    </div>
+
+    <!-- Modal Quà Cưới -->
+    <div id="gift-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-white/60 backdrop-blur-md pointer-events-none opacity-0 transition-opacity duration-700">
+        <div id="gift-modal-content" class="glass-panel p-10 md:p-14 rounded-[2.5rem] max-w-md w-full mx-4 relative transform scale-95 opacity-0 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.15)] bg-white/95 border border-champagne/30 text-center pointer-events-auto">
+            <button onclick="toggleModal('gift-modal', 'close')" class="absolute top-6 right-6 text-gray-400 hover:text-champagne transition-colors p-2 rounded-full hover:bg-champagne/10">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div class="flex justify-center mb-6">
+                <span class="w-20 h-[1px] bg-gradient-to-r from-transparent via-champagne to-transparent inline-block"></span>
+            </div>
+            
+            <div class="flex justify-center mb-6 relative">
+                <div class="absolute inset-0 bg-champagne/20 blur-2xl rounded-full scale-150"></div>
+                <i class="fa-solid fa-heart text-4xl text-champagne/80 animate-pulse relative z-10"></i>
+            </div>
+            
+            <h3 class="cursive-font text-5xl md:text-6xl text-champagne mb-6 drop-shadow-sm">Tri Ân</h3>
+            <p class="text-gray-700 font-light leading-relaxed italic text-lg md:text-xl serif-font px-2">
+                "Sự hiện diện của bạn là món quà quý giá nhất đối với gia đình chúng tôi..."
+            </p>
+            
+            <div class="flex justify-center mt-8 mb-4">
+                <span class="w-20 h-[1px] bg-gradient-to-r from-transparent via-champagne to-transparent inline-block"></span>
+            </div>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">Chú Rể - Cô Dâu</p>
+        </div>
+    </div>
+
+    <!-- Modal Hồi Đáp (RSVP) -->
+    <div id="rsvp-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-white/60 backdrop-blur-md pointer-events-none opacity-0 transition-opacity duration-700 overflow-y-auto pt-4 pb-4">
+        <div id="rsvp-modal-content" class="glass-panel p-8 md:p-12 rounded-[2.5rem] max-w-xl w-full mx-4 my-auto relative transform scale-95 opacity-0 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.15)] bg-white/95 border border-champagne/30 pointer-events-auto">
+            <button onclick="toggleModal('rsvp-modal', 'close')" class="absolute top-6 right-6 text-gray-400 hover:text-champagne transition-colors p-2 rounded-full hover:bg-champagne/10 z-20">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div class="absolute inset-0 bg-gradient-to-b from-white/60 to-champagne/5 pointer-events-none rounded-[2.5rem]"></div>
+
+            <div class="text-center mb-8 relative z-10">
+                <p class="cursive-font text-4xl text-champagne mb-2 drop-shadow-sm">Hồi Đáp</p>
+                <h2 class="serif-font text-2xl md:text-3xl text-gray-800 mb-3">Xác Nhận Tham Dự</h2>
+                <div class="w-12 h-[1px] bg-champagne/50 mx-auto mb-4"></div>
+                <p class="text-gray-500 text-xs md:text-sm font-light italic px-4">Vui lòng phản hồi để gia đình chúng tôi chuẩn bị đón tiếp chu đáo nhất</p>
+            </div>
+            
+            <form id="rsvp-form" class="space-y-5 relative z-10">
+                <div class="relative group">
+                    <i class="fa-regular fa-user absolute left-2 top-1/2 transform -translate-y-1/2 text-champagne/60 group-focus-within:text-champagne transition-colors"></i>
+                    <input type="text" name="HoTen" required class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 placeholder-gray-400" placeholder="Họ và tên...">
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    <div class="relative group">
+                        <i class="fa-solid fa-mobile-screen absolute left-2 top-1/2 transform -translate-y-1/2 text-champagne/60 group-focus-within:text-champagne transition-colors"></i>
+                        <input type="tel" name="SoDienThoai" required class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 placeholder-gray-400" placeholder="Số điện thoại...">
+                    </div>
+                    <div class="relative group flex items-center justify-between px-2 py-3 border-b border-gray-200">
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
+                            <input type="radio" name="ThamGia" value="Có tham gia" checked class="accent-champagne">
+                            Tham gia
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
+                            <input type="radio" name="ThamGia" value="Rất tiếc" class="accent-champagne">
+                            Rất tiếc
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <i class="fa-solid fa-user-group absolute left-2 top-1/2 transform -translate-y-1/2 text-champagne/60 z-10 group-focus-within:text-champagne transition-colors"></i>
+                    <select name="SoNguoi" class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 appearance-none relative cursor-pointer">
+                        <option value="Không xác định" disabled selected hidden>Số người tham dự cùng bạn...</option>
+                        <option value="1 Người">Đi một mình (1 người)</option>
+                        <option value="2 Người">Đi cùng người thương (2 người)</option>
+                        <option value="3 Người">Đi cùng gia đình (3 người)</option>
+                        <option value="4+ Người">4+ người</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-300 text-xs pointer-events-none"></i>
+                </div>
+                
+                <div class="relative group pt-2">
+                    <i class="fa-regular fa-envelope absolute left-2 top-5 text-champagne/60 group-focus-within:text-champagne transition-colors"></i>
+                    <textarea name="LoiChuc" rows="3" class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-gray-200 focus:border-champagne text-gray-700 text-sm outline-none transition-all duration-300 resize-none placeholder-gray-400" placeholder="Lời chúc gửi tặng gia đình..."></textarea>
+                </div>
+                
+                <div class="pt-4 flex justify-center">
+                    <button type="submit" id="submit-btn" class="group relative px-8 py-3 bg-champagne text-white rounded-full overflow-hidden hover:shadow-[0_10px_20px_rgba(197,160,89,0.3)] transition-all duration-500">
+                        <span class="absolute top-0 left-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
+                        <span class="relative text-xs uppercase tracking-[0.2em] font-medium flex items-center gap-2" id="submit-text">
+                            Gửi Hồi Đáp <i class="fa-solid fa-paper-plane text-white/80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // XỬ LÝ ÂM THANH
+        document.addEventListener('DOMContentLoaded', () => {
+            const music = document.getElementById('wedding-music');
+            const musicBtn = document.getElementById('music-toggle');
+            const icon = musicBtn.querySelector('i');
+            let isPlaying = false;
+
+            document.body.addEventListener('click', function initMusic() {
+                if (!isPlaying) {
+                    music.play().then(() => {
+                        isPlaying = true;
+                        icon.classList.remove('fa-music');
+                        icon.classList.add('fa-compact-disc', 'animate-spin-slow');
+                    }).catch(err => console.log("Cần tương tác để phát nhạc"));
+                }
+                document.body.removeEventListener('click', initMusic);
+            }, { once: true });
+
+            musicBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                if (isPlaying) {
+                    music.pause();
+                    icon.classList.remove('fa-compact-disc', 'animate-spin-slow');
+                    icon.classList.add('fa-music');
+                } else {
+                    music.play();
+                    icon.classList.remove('fa-music');
+                    icon.classList.add('fa-compact-disc', 'animate-spin-slow');
+                }
+                isPlaying = !isPlaying;
+            });
+        });
+
+        // MODAL TOGGLE
+        function toggleModal(modalId, action) {
+            const modal = document.getElementById(modalId);
+            const content = document.getElementById(modalId + '-content');
+            
+            if (action === 'open') {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    content.classList.remove('scale-95', 'opacity-0');
+                }, 10);
+            } else {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                content.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 700);
+            }
+        }
+
+        AOS.init({ once: true, offset: 50, duration: 1000 });
+
+        // GỬI FORM VỀ GOOGLE SHEETS BẰNG FORMDATA & NO-CORS
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx1Q3kPq9To2GffF_fR6pqoMIvsaaB67WBZ4Flv_aHvhkX5jtEZtUtOI-edX5M3zbyF1Q/exec';
+        const form = document.forms['rsvp-form'];
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitBtnText = document.getElementById('submit-text');
+            const originalText = submitBtnText.innerHTML;
+            
+            submitBtnText.innerHTML = 'ĐANG GỬI... <i class="fa-solid fa-spinner fa-spin ml-2"></i>';
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', 
+                body: new FormData(form)
+            })
+            .then(() => {
+                alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
+                submitBtnText.innerHTML = originalText;
+                form.reset();
+                toggleModal('rsvp-modal', 'close');
+            })
+            .catch(error => {
+                alert('Có lỗi xảy ra. Vui lòng thử lại!');
+                submitBtnText.innerHTML = originalText;
+            });
+        });
+
+        // HIỆU ỨNG HẠT BỤI VÀNG
+        window.onload = function () {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            let w, h;
+            let particles = [];
+            let mouse = { x: undefined, y: undefined, radius: 120 };
+
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            
+            window.addEventListener('touchmove', (event) => {
+                mouse.x = event.touches[0].clientX;
+                mouse.y = event.touches[0].clientY;
+            });
+
+            window.addEventListener('mouseout', () => {
+                mouse.x = undefined;
+                mouse.y = undefined;
+            });
+
+            function resizeCanvas() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initParticles(); 
+            });
+
+            resizeCanvas();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.size = Math.random() * 2.5 + 0.5;
+                    this.baseX = this.x;
+                    this.baseY = this.y;
+                    this.density = (Math.random() * 15) + 1;
+                    this.speedY = Math.random() * 0.8 + 0.2;
+                    this.speedX = (Math.random() - 0.5) * 0.4;
+                    let opacity = Math.random() * 0.6 + 0.1;
+                    this.color = `rgba(197, 160, 89, ${opacity})`;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                update() {
+                    this.y -= this.speedY;
+                    this.x += this.speedX;
+
+                    if (this.y < 0) {
+                        this.y = h;
+                        this.x = Math.random() * w;
+                    }
+                    if (this.x > w || this.x < 0) {
+                        this.x = Math.random() * w;
+                    }
+
+                    if (mouse.x != undefined && mouse.y != undefined) {
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        let forceDirectionX = dx / distance;
+                        let forceDirectionY = dy / distance;
+                        let maxDistance = mouse.radius;
+                        let force = (maxDistance - distance) / maxDistance;
+                        let directionX = forceDirectionX * force * this.density;
+                        let directionY = forceDirectionY * force * this.density;
+
+                        if (distance < maxDistance) {
+                            this.x -= directionX;
+                            this.y -= directionY;
+                        }
+                    }
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                let numberOfParticles = (w * h) / 12000; 
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            initParticles();
+            animate(); 
+        };
+    </script>
+</body>
+</html>
