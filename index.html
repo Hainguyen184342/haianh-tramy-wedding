@@ -118,7 +118,7 @@
     <!-- HIỆU ỨNG HẠT BỤI VÀNG NỀN -->
     <canvas id="bg-canvas"></canvas>
     
-    <!-- THẺ AUDIO NHẠC NỀN (Dùng link tương đối siêu tốc) -->
+    <!-- THẺ AUDIO NHẠC NỀN (Lấy trực tiếp file trên Github) -->
     <audio id="wedding-music" loop preload="auto">
         <source src="nhac-cuoi.mp3" type="audio/mpeg">
     </audio>
@@ -147,21 +147,21 @@
                 <p class="uppercase tracking-[0.3em] text-xs md:text-sm mb-4 md:mb-6 text-gray-500 font-light mt-2">Trân Trọng Kính Mời</p>
                 <p class="serif-font text-lg md:text-xl mb-4 md:mb-6 italic text-gray-600 font-light">Tới dự lễ thành hôn của gia đình chúng tôi</p>
                 
-                <!-- BỐ CỤC TÊN SO LE VÀ CHỮ & SẠCH SẼ -->
-                <div class="w-full relative py-20 my-4 flex flex-col justify-center min-h-[300px]">
+                <!-- BỐ CỤC TÊN SO LE VÀ CHỮ & SẠCH SẼ (Bản Chuẩn Nhất) -->
+                <div class="w-full relative py-16 my-4 flex flex-col justify-center min-h-[250px]">
                     
                     <!-- Chú rể góc trên trái -->
-                    <div class="w-full flex justify-start sm:pl-10 md:pl-14 relative z-10 -mt-6">
+                    <div class="w-full flex justify-start sm:pl-10 md:pl-14 relative z-10 -mt-8">
                         <h1 class="cursive-font text-6xl sm:text-7xl md:text-8xl text-champagne drop-shadow-sm leading-none m-0 whitespace-nowrap">Hải Anh</h1>
                     </div>
                     
-                    <!-- Chữ & ở chính giữa (Cố định bằng Absolute, KHÔNG có vòng tròn) -->
+                    <!-- Chữ & ở chính giữa (Cố định bằng Absolute, Bỏ vòng tròn) -->
                     <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
                         <span class="cursive-font text-5xl sm:text-6xl text-champagne font-medium opacity-90">&amp;</span>
                     </div>
                     
-                    <!-- Cô dâu góc dưới phải (Đã đẩy xuống xa) -->
-                    <div class="w-full flex justify-end sm:pr-10 md:pr-14 relative z-10 mt-16">
+                    <!-- Cô dâu góc dưới phải (Đẩy sâu xuống 20px) -->
+                    <div class="w-full flex justify-end sm:pr-10 md:pr-14 relative z-10 mt-20">
                         <h1 class="cursive-font text-6xl sm:text-7xl md:text-8xl text-champagne drop-shadow-sm leading-none m-0 whitespace-nowrap">Trà My</h1>
                     </div>
                     
@@ -274,7 +274,7 @@
             </div>
         </section>
 
-        <!-- BỐ CỤC ALBUM ẢNH CHIA CỘT FLEXBOX (Link Tương Đối Siêu Nhanh) -->
+        <!-- BỐ CỤC ALBUM ẢNH CHIA CỘT FLEXBOX CHÍNH XÁC 100% -->
         <section class="py-24 px-4 relative z-20">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
@@ -288,10 +288,10 @@
                     <!-- CỘT 1 (Bên Trái) -->
                     <div class="flex flex-col gap-4 w-1/3">
                         <div class="gallery-item" data-aos="fade-up">
-                            <img src="image/252A7137_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7137_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up">
-                            <img src="image/252A7234_(2)_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7234_(2)_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="text-block flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up">
                             <i class="fa-solid fa-heart text-2xl text-champagne/40 mb-3"></i>
@@ -299,23 +299,23 @@
                             <p class="serif-font text-sm text-gray-600 mt-2 italic">"Cùng nhìn về một hướng..."</p>
                         </div>
                         <div class="gallery-item" data-aos="fade-up">
-                            <img src="image/252A7289_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7289_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up">
-                            <img src="image/252A7338_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7338_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up">
-                            <img src="image/252A7588_1.jpg" loading="lazy" alt="Ảnh cưới ngang góc trái">
+                            <img src="image/252A7588_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới ngang góc trái">
                         </div>
                     </div>
 
                     <!-- CỘT 2 (Ở Giữa) -->
                     <div class="flex flex-col gap-4 w-1/3">
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="image/252A7774.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7774.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="image/252A7737.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7737.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="text-block flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up" data-aos-delay="100">
                             <i class="fa-solid fa-ring text-2xl text-champagne/40 mb-3"></i>
@@ -323,23 +323,23 @@
                             <p class="serif-font text-sm text-gray-600 mt-2 italic">"Hôm nay và mãi về sau..."</p>
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="image/252A7595_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7595_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới" class="object-top">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="image/252A7681_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7681_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="image/252A8012.jpg" loading="lazy" alt="Ảnh cưới chú rể">
+                            <img src="image/252A7321_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới chú rể">
                         </div>
                     </div>
 
                     <!-- CỘT 3 (Bên Phải) -->
                     <div class="flex flex-col gap-4 w-1/3">
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                            <img src="image/252A7259_(2)_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7259_(2)_1.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                            <img src="image/252A7842.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7842.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="text-block flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up" data-aos-delay="200">
                             <i class="fa-solid fa-gem text-2xl text-champagne/40 mb-3"></i>
@@ -347,13 +347,13 @@
                             <p class="serif-font text-sm text-gray-600 mt-2 italic">"Nụ cười của em là niềm vui của anh..."</p>
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                            <img src="image/252A7321_1.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A8012.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                            <img src="image/252A8028.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A8028.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                            <img src="image/252A7989.jpg" loading="lazy" alt="Ảnh cưới">
+                            <img src="image/252A7989.jpg" loading="lazy" decoding="async" alt="Ảnh cưới">
                         </div>
                     </div>
                 </div>
@@ -361,38 +361,39 @@
                 <!-- Bố cục cho Điện Thoại (2 Cột) -->
                 <div class="flex md:hidden flex-row gap-3 w-full">
                     <div class="flex flex-col gap-3 w-1/2">
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7137_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7234_(2)_1.jpg" loading="lazy" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7137_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7234_(2)_1.jpg" loading="lazy" decoding="async" alt="img"></div>
                         <div class="text-block flex flex-col items-center justify-center py-4 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up"><i class="fa-solid fa-heart text-champagne/40 mb-1"></i><h3 class="cursive-font text-2xl text-champagne">Tình yêu</h3></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7774.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7588_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7737.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7595_1.jpg" loading="lazy" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7321_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7588_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7774.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7595_1.jpg" loading="lazy" decoding="async" alt="img" class="object-top"></div>
                         <div class="text-block flex flex-col items-center justify-center py-4 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up"><i class="fa-solid fa-ring text-champagne/40 mb-1"></i><h3 class="cursive-font text-2xl text-champagne">Mãi Mãi</h3></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7842.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A8028.jpg" loading="lazy" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7842.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A8028.jpg" loading="lazy" decoding="async" alt="img"></div>
                     </div>
                     <div class="flex flex-col gap-3 w-1/2">
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7259_(2)_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7289_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7338_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A8012.jpg" loading="lazy" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7259_(2)_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7289_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7338_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7737.jpg" loading="lazy" decoding="async" alt="img"></div>
                         <div class="text-block flex flex-col items-center justify-center py-4 bg-white/40 backdrop-blur-sm rounded-lg border border-champagne/20 text-center" data-aos="fade-up"><i class="fa-solid fa-gem text-champagne/40 mb-1"></i><h3 class="cursive-font text-2xl text-champagne">Hạnh Phúc</h3></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7681_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7321_1.jpg" loading="lazy" alt="img"></div>
-                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7989.jpg" loading="lazy" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7681_1.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A8012.jpg" loading="lazy" decoding="async" alt="img"></div>
+                        <div class="gallery-item" data-aos="fade-up"><img src="image/252A7989.jpg" loading="lazy" decoding="async" alt="img"></div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Lightbox Modal Bấm Để Xem Ảnh Phóng To -->
+            <!-- Lightbox Modal -->
             <div id="image-lightbox" class="fixed inset-0 z-[200] hidden bg-black/95 flex items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-md">
                 <button onclick="closeLightbox()" class="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-50 p-3 bg-black/20 rounded-full hover:bg-black/50">
                     <i class="fa-solid fa-xmark text-3xl"></i>
                 </button>
                 <img id="lightbox-img" src="" alt="Zoomed Image" class="max-w-[95vw] max-h-[90vh] object-contain transform scale-95 transition-transform duration-300 shadow-2xl rounded-sm">
             </div>
-
+            
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
                     const galleryImages = document.querySelectorAll('.gallery-item img');
@@ -602,7 +603,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // XỬ LÝ ÂM THANH HOÀN HẢO VÀ AN TOÀN TRÊN MỌI TRÌNH DUYỆT
+        // XỬ LÝ ÂM THANH: CHỈ NHẬN CHẠM/CLICK ĐỂ VƯỢT TƯỜNG LỬA TRÌNH DUYỆT
         document.addEventListener('DOMContentLoaded', () => {
             const music = document.getElementById('wedding-music');
             const musicBtn = document.getElementById('music-toggle');
@@ -613,39 +614,42 @@
                 const hint = document.getElementById('music-hint');
                 let isPlaying = false;
 
-                function playMusic() {
+                function playAudio() {
                     if (isPlaying) return;
-                    music.play().then(() => {
-                        isPlaying = true;
-                        icon.classList.remove('fa-music');
-                        icon.classList.add('fa-compact-disc', 'animate-spin-slow');
-                        if (ping) ping.style.display = 'none';
-                        if (hint) hint.style.opacity = '0'; // Làm mờ chữ nhắc nhở đi
-                    }).catch(err => {
-                        console.log("Trình duyệt chặn tự phát, cần người dùng tương tác thêm");
-                    });
+                    let playPromise = music.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            isPlaying = true;
+                            icon.classList.remove('fa-music');
+                            icon.classList.add('fa-compact-disc', 'animate-spin-slow');
+                            if (ping) ping.style.display = 'none';
+                            if (hint) hint.style.opacity = '0';
+                            
+                            // CHỈ gỡ bỏ sự kiện khi nhạc đã được phát THÀNH CÔNG
+                            document.removeEventListener('click', playAudio);
+                            document.removeEventListener('touchstart', playAudio);
+                        }).catch(error => {
+                            // Trình duyệt chặn -> Giữ nguyên sự kiện để chờ lần chạm tiếp theo
+                            console.log("Trình duyệt chặn phát nhạc, chờ tương tác trực tiếp từ người dùng...");
+                        });
+                    }
                 }
 
-                // Tự động phát khi khách vừa lướt xem thiệp hoặc chạm vào màn hình
-                const startMusicEvents = ['click', 'touchstart', 'scroll', 'mousemove'];
-                const initMusicHandler = () => {
-                    playMusic();
-                    // Gỡ bỏ sự kiện sau khi đã kích hoạt để không làm nặng máy
-                    startMusicEvents.forEach(evt => document.removeEventListener(evt, initMusicHandler));
-                };
+                // Lắng nghe cú chạm/click bất kỳ đâu trên màn hình
+                document.addEventListener('click', playAudio);
+                document.addEventListener('touchstart', playAudio, {passive: true});
 
-                startMusicEvents.forEach(evt => document.addEventListener(evt, initMusicHandler, { once: true }));
-
-                // Bấm nút để Tắt/Bật thủ công
+                // Nút bấm Bật/Tắt thủ công
                 musicBtn.addEventListener('click', (e) => {
-                    e.stopPropagation(); 
+                    e.stopPropagation(); // Quan trọng: Ngăn không cho click này lan ra document
                     if (isPlaying) {
                         music.pause();
                         isPlaying = false;
                         icon.classList.remove('fa-compact-disc', 'animate-spin-slow');
                         icon.classList.add('fa-music');
                     } else {
-                        playMusic();
+                        playAudio();
                     }
                 });
             }
@@ -696,7 +700,6 @@
                 toggleModal('rsvp-modal', 'close');
             })
             .catch(error => {
-                // Lỗi CORS vẫn báo thành công vì data vẫn vào sheet
                 alert('Tuyệt vời! Lời hồi đáp của bạn đã được gửi thành công.');
                 form.reset();
                 toggleModal('rsvp-modal', 'close');
